@@ -1,0 +1,18 @@
+server:
+  port: 9090
+# spring:
+#   kafka:
+#     bootstrap-servers: "172.20.154.160:9092,172.20.154.162:9092"  # 这里指定多个Kafka集群
+# camel:
+#   components:
+#     kafka:
+#       brokers: "172.20.154.160:9092,172.20.154.162:9092"
+kafka:
+  cluster1:
+    brokers: "172.20.154.160:9092"
+    topicPattern: "test1,test2"  # 监听所有Topic
+    manualOffset: 1
+  cluster2:
+    brokers: "172.20.154.162:9092"
+    topicPattern: "C-test,C.test"  # 监听所有Topic
+    manualOffset: 1
